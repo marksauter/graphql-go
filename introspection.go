@@ -22,7 +22,9 @@ func (s *Schema) ToJSON() ([]byte, error) {
 	if len(result.Errors) != 0 {
 		panic(result.Errors[0])
 	}
-	return json.MarshalIndent(result.Data, "", "\t")
+	// Relay compiler expects the result under "data" field
+	// return json.MarshalIndent(result.Data, "", "\t")
+	return json.MarshalIndent(result, "", "\t")
 }
 
 var introspectionQuery = `
