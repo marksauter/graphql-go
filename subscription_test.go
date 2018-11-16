@@ -6,9 +6,9 @@ import (
 	"errors"
 	"testing"
 
-	graphql "github.com/graph-gophers/graphql-go"
-	qerrors "github.com/graph-gophers/graphql-go/errors"
-	"github.com/graph-gophers/graphql-go/gqltesting"
+	graphql "github.com/marksauter/graphql-go"
+	qerrors "github.com/marksauter/graphql-go/errors"
+	"github.com/marksauter/graphql-go/gqltesting"
 )
 
 type rootResolver struct {
