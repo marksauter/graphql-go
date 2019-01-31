@@ -8,6 +8,11 @@ import (
 // ID represents GraphQL's "ID" scalar type. A custom type may be used instead.
 type ID string
 
+func NewID(input interface{}) (id ID, err error) {
+	err = id.UnmarshalGraphQL(input)
+	return
+}
+
 func (ID) ImplementsGraphQLType(name string) bool {
 	return name == "ID"
 }
