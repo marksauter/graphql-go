@@ -19,6 +19,8 @@ func (id *ID) UnmarshalGraphQL(input interface{}) error {
 		*id = ID(input)
 	case int32:
 		*id = ID(strconv.Itoa(int(input)))
+	case int64:
+		*id = ID(strconv.FormatInt(input, 10))
 	default:
 		err = errors.New("wrong type")
 	}
